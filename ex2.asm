@@ -67,14 +67,15 @@ secondpart:
 again:
 	mov al,x
 	mov ah,00
+	mov dx,0000h
 	cmp ax,01
 	je notprime
 	cmp ax,03
 	je prime
-	div cl 
-	cmp ah,00
+	div cx 
+	cmp dx,00
 	je notprime
-	inc cl
+	inc cx
 	cmp cx,bx
 	jle again
 prime:
