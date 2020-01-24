@@ -51,6 +51,10 @@ start:
 
 printeven: 
 	printf seven
+	mov al,x
+	mov ah,00
+	cmp ax,02
+	je prime
 	printf snotp
 	jmp skip
 	
@@ -63,12 +67,17 @@ secondpart:
 again:
 	mov al,x
 	mov ah,00
+	cmp ax,01
+	je notprime
+	cmp ax,03
+	je prime
 	div cl 
 	cmp ah,00
 	je notprime
 	inc cl
 	cmp cx,bx
 	jle again
+prime:
 	printf sisp
 	jmp skip
 notprime: 
