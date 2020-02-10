@@ -53,7 +53,8 @@ start:
     mov cx,00
 print:
     mov ah,00
-    mov al,num 
+    mov al,num
+    mov dx,00h
     mov bl,0ah
     div bl 
     mov num,al
