@@ -68,6 +68,7 @@ done:
     print:
         mov ah,00
         mov al,temp 
+        mov dx,00h
         mov bl,0ah
         div bl 
         mov temp,al
